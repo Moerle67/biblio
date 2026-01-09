@@ -4,7 +4,7 @@
 {% block content %}
 <ol>
 {% for zeile in  lst_buecher %}
-    <li>{{zeile}}</li>
+    <a href="/admin/verleih/verleihung/{{zeile.pk}}/change/" target="_empty"><li>{{zeile}}</li></a>
 {% endfor %}
 </ol>
 
