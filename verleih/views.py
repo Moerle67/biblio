@@ -1,7 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Verleihung
 
 def start(request):
-    return HttpResponse("Webseite gestartet")
+    name = "Ingo Mörl und der VFB"
+    h1 = "Bücher außer Haus"
+    lst_buecher = Verleihung.objects.filter(bis__isnull = True)
+    content = {
+        'name': name,
+        'h1': h1,
+        'lst_buecher': lst_buecher
+    }
+    return render(request, 'verl_buecher.html', content)

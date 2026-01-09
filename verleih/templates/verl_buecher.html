@@ -1,0 +1,11 @@
+{% extends "start.html" %}
+
+{% block h1 %}{{h1}}{% endblock h1 %}
+{% block content %}
+<ol>
+{% for zeile in  lst_buecher %}
+    <li>{{zeile}}</li>
+{% endfor %}
+</ol>
+
+{% endblock content %}
